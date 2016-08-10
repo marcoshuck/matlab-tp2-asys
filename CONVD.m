@@ -17,5 +17,15 @@ Realizado por Huck Marcos A. y Castelluci Leandro E.
 %}
 
 function[Yn, Ynx, Xnx, Hnx] = CONVD(nx, X, nh, H)
-    if()
+    if(size(nx) == size(nh))
+        Xnx = X(nx);
+        Hnx = H(nh);
+        Yn = zeros(1, length(nx));
+        for idx = 1:length(Hnx)
+            %Ynx = FCORT(Xnx, nx(idx), 0, nx);
+            Yn = Hnx(idx) .* FCORT(Xnx, nx(idx), 0, nx) + Yn;
+        end;
+    else
+        warning('nx y nh son de tamaños distintos.');
+    end
 end

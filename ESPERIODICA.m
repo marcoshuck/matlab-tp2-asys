@@ -16,5 +16,6 @@ Realizado por Huck Marcos A. y Castelluci Leandro E.
 %}
 
 function[Per, Pe] = ESPERIODICA(n, FDN)
-    if()
+    
+    
 end
