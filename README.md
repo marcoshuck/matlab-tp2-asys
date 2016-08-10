@@ -16,6 +16,6 @@ Se intentó realizar el trabajo utilizando programación dinámica y reutilizabl
 - Castelluci, Leandro E.
 
 ### Comentarios:
-- Se dejaron comentados las funciones para graficar, para no crear un delay a la hora de realizar la correción del tp.
+- Se utilizó system("PAUSE") para detener la ejecución de los scripts para su correcta visualización.
 - Este trabajo está abierto a futuras correcciones propias o de terceros que así lo crean necesario.
 - Por cualquier consulta, contactar al creador del repositorio.
