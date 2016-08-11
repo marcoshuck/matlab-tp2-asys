@@ -221,7 +221,6 @@ stem(x3(t));
 % Gráfica de la función h
 stem(h3(t));
 
-% Fin de caso 3
 grid on;
 title('x3(t) convolución h3(t)');
 xlabel('t');
@@ -229,13 +228,39 @@ ylabel('F(t)');
 legend('show');
 legend('y3(t)', 'x3(t)', 'h3(t)');
 
+% Fin de caso 3
+disp('Presione una tecla para continuar.');
+system('PAUSE>NULL');
+
+
 % << FIN DEL EJERCICIO 3.2 >>
 
 % Realizamos un salto de línea por cuestión estética
 fprintf('\n');
 
 % << INICIO DEL EJERCICIO 3.3 >>
+disp('Ejercicio 3 - Grupo 6 - 3.3');
+
+y1 = T*conv(x1(t), h1(t));
 [Yn1, Ynx1, Xnx1, Hnx1] = CONVD(n, x1, n, h1);
 
+% Estado de hold graph desactivado
+hold off;
+
+% Gráfica de la función y
+stem(y1);
+
+% Estado de hold graph activado
+hold on;
+
+% Gráfica de la función Yn1
+stem(Ynx1, Yn1);
+
+grid on;
+title('Comparación de convolución por definición y con comando CONVD');
+xlabel('n');
+ylabel('F(n)');
+legend('show');
+legend('y(n) original', 'y(n) convolución con CONVD');
 
 % << FIN DEL EJERCICIO 3.3 >>

@@ -20,7 +20,7 @@ syms t;
 
 % Definimos las funciones en tiempo continuo
 FCT1=@(t) sin(t);
-FCT2=@(t) cos(t);
+FCT2=@(t) tan(t);
 
 fprintf('FCT1 = %s\n', FCT1(t));
 fprintf('FCT2 = %s\n', FCT2(t));
@@ -31,13 +31,13 @@ disp('- Gráfica de FCT1 y FCT2');
 hold off;
 
 % Graficamos la primera función
-ezplot(FCT1(t), [-10, 10]);
+ezplot(FCT1(t), [-100, 100]);
 
 % Estado de hold graph activado
 hold on;
 
 % Graficamos la segunda función
-ezplot(FCT2(t), [-10, 10]);
+ezplot(FCT2(t), [-100, 100]);
 
 grid on;
 title( 'FCT1 y FCT2' );
@@ -57,11 +57,11 @@ fprintf('\n');
 % << INICIO DEL EJERCICIO 1.2 >>
 disp('Ejercicio 1 - Grupo 6 - 1.2');
 
-n = -10:1:10;
+n = -100:1:100;
 
 % Definimos las funciones en tiempo continuo
 FDN1=@(n) sin(n);
-FDN2=@(n) cos(n);
+FDN2=@(n) tan(n);
 
 fprintf('FDN1 = %s\n', char(FDN1));
 fprintf('FDN2 = %s\n', char(FDN2));

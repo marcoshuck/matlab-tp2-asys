@@ -14,12 +14,12 @@ clc;
 
 % Redefinimos las funciones del ejercicio anterior
 syms t;
-n = -10:1:10;
+n = -100:1:100;
 
-FCT1=@(t) sin(t);
+FCT1=@(t) sin(0.25*t);
 FCT2=@(t) tan(t);
 
-FDN1=@(n) sin(n);
+FDN1=@(n) sin(0.25*n);
 FDN2=@(n) tan(n);
 
 
@@ -38,16 +38,16 @@ fprintf('- Gráfica de FCT1, FCT1(t-(%i)) y FCT1(t-(%i)\n', vD1, vD2);
 hold off;
 
 % Gráfica de la función original
-ezplot(FCT1(t), [-10, 10]);
+ezplot(FCT1(t), [-100, 100]);
 
 % Estado de hold graph activado
 hold on;
 
 % Gráfica de la función con corrimiento vD1
-ezplot(FCORT(FCT1, vD1, 1), [-10, 10]);
+ezplot(FCORT(FCT1, vD1, 1), [-100, 100]);
 
 % Gráfica de la función con corrimiento vD2
-ezplot(FCORT(FCT1, vD2, 1), [-10, 10]);
+ezplot(FCORT(FCT1, vD2, 1), [-100, 100]);
 
 grid on;
 title('FCT1 con FCORT');
@@ -104,13 +104,13 @@ fprintf('- Gráfica de FCT1 y FCT1(-t)\n');
 hold off;
 
 % Gráfica de la función original
-ezplot(FCT1, [-10, 10]);
+ezplot(FCT1, [-100, 100]);
 
 % Estado de hold graph activado
 hold on;
 
 % Gráfica de la función con corrimiento vD1
-ezplot(FINVT(FCT1, 1), [-10, 10]);
+ezplot(FINVT(FCT1, 1), [-100, 100]);
 
 grid on;
 title('FCT1 con FINVT');
@@ -128,13 +128,13 @@ fprintf('- Gráfica de FCT2 y FCT2(-t)\n');
 hold off;
 
 % Gráfica de la función original
-ezplot(FCT2, [-10, 10]);
+ezplot(FCT2, [-100, 100]);
 
 % Estado de hold graph activado
 hold on;
 
 % Gráfica de la función con corrimiento vD1
-ezplot(FINVT(FCT2, 1), [-10, 10]);
+ezplot(FINVT(FCT2, 1), [-100, 100]);
 
 grid on;
 title('FCT2 con FINVT');
@@ -204,7 +204,7 @@ system('PAUSE>NULL');
 fprintf('\n');
 
 % << INICIO DEL EJERCICIO 2.1.3 >>
-disp('Ejercicio 2 - Grupo 6 - 2.1.2');
+disp('Ejercicio 2 - Grupo 6 - 2.1.3');
 
 disp('Ejecutar un escalamiento de tiempo');
 
@@ -218,16 +218,16 @@ fprintf('- Gráfica de FCT1, FCT1(%f*t) y FCT1(%f*t)\n', vK1, vK2);
 hold off;
 
 % Gráfica de la función original
-ezplot(FCT1(t), [-10, 10]);
+ezplot(FCT1(t), [-100, 100]);
 
 % Estado de hold graph activado
 hold on;
 
 % Gráfica de la función con corrimiento vD1
-ezplot(FESCT(FCT1, vK1, 1), [-10, 10]);
+ezplot(FESCT(FCT1, vK1, 1), [-100, 100]);
 
 % Gráfica de la función con corrimiento vD2
-ezplot(FESCT(FCT1, vK2, 1), [-10, 10]);
+ezplot(FESCT(FCT1, vK2, 1), [-100, 100]);
 
 grid on;
 title('FCT1 con FESCT');
@@ -278,31 +278,31 @@ disp('Ejercicio 2 - Grupo 6 - 2.2');
 
 disp('Función ESPARIMPAR');
 
-for i = 1:5
-    fprintf('Prueba %d\n', i)
-    switch i
-        case 1 % Prueba 1
-            fprintf('Función: %s\n', FCT1);
-            [p, Fpar, Fimp] = ESPARIMPAR(t, FCT1, 1);
-            fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
-        case 2 % Prueba 2
-            fprintf('Función: %s\n', FCT2(t));
-            [p, Fpar, Fimp] = ESPARIMPAR(t, FCT1, 1);
-            fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
-        
-        case 3 % Prueba 3
-            fprintf('Función: %s\n', FDN1);
-            [p, Fpar, Fimp] = ESPARIMPAR(n, FDN1, 0);
-            fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
-        case 4 % Prueba 4
-            fprintf('Función: %s\n', FDN2);
-            [p, Fpar, Fimp] = ESPARIMPAR(n, FDN2, 0);
-            %fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
-        case 5 % Prueba 5
-            fprintf('Función: %s\n', FDN2);
-            [p, Fpar, Fimp] = ESPARIMPAR(n, FDN2, 0);
-            fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
-        otherwise
-            warning('Cuidado, no se han definido todas las pruebas que usted está requiriendo.');
-    end
-end
+% for i = 1:5
+%     fprintf('Prueba %d\n', i)
+%     switch i
+%         case 1 % Prueba 1
+%             fprintf('Función: %s\n', FCT1);
+%             [p, Fpar, Fimp] = ESPARIMPAR(t, FCT1, 1);
+%             fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
+%         case 2 % Prueba 2
+%             fprintf('Función: %s\n', FCT2(t));
+%             [p, Fpar, Fimp] = ESPARIMPAR(t, FCT1, 1);
+%             fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
+%         
+%         case 3 % Prueba 3
+%             fprintf('Función: %s\n', FDN1);
+%             [p, Fpar, Fimp] = ESPARIMPAR(n, FDN1, 0);
+%             fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
+%         case 4 % Prueba 4
+%             fprintf('Función: %s\n', FDN2);
+%             [p, Fpar, Fimp] = ESPARIMPAR(n, FDN2, 0);
+%             fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
+%         case 5 % Prueba 5
+%             fprintf('Función: %s\n', FDN2);
+%             [p, Fpar, Fimp] = ESPARIMPAR(n, FDN2, 0);
+%             fprintf('\tParidad: %d\n\tFunción par: %s\n\tFunción impar: %s\n\n', p, Fpar, Fimp);
+%         otherwise
+%             warning('Cuidado, no se han definido todas las pruebas que usted está requiriendo.');
+%     end
+% end
